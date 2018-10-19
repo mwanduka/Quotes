@@ -1,0 +1,9 @@
+<h1>Best Quotes of all time</h1>
+<hr>
+
+<ol>
+    <div *ngFor='let quote of quotes'>
+      <li>{{quote.name}}</li>
+      <app-quote-details [quote]='quote'></app-quote-details>
+    <div>
+</ol>
