@@ -1,9 +1,26 @@
+<div style="text-align:center">
 <h1>Best Quotes of all time</h1>
 <hr>
 
-<ol>
-    <div *ngFor='let quote of quotes'>
-      <li>{{quote.name}}</li>
-      <app-quote-details [quote]='quote'></app-quote-details>
-    <div>
-</ol>
+<div class="container">
+  <div class="row">
+    <app-quote-form (addQuotes)="addNewQuotes($event)"></app-quote-form>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row" *ngFor="let quote of quotes;let i = 'index'">
+    <div class="row">
+      <h4 id="{{i}}" appHighlight>{{quote.quote}} Date written: {{quote.completeDate|date}}</h4>
+      <button class="btn btn-primary" (click)='toogleDetails(i)'>Explanation</button>
+      <vote-box></vote-box>
+    </div>
+
+    <div class="row" *ngIf="quote.showExplanation">
+      <app-quote-details [quote]='quote' (isComplete)='deleteQuotes($event,i)'></app-quote-details>
+    </div>
+
+  </div>
+
+</div>
+</div>

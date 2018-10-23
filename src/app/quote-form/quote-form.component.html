@@ -1,3 +1,47 @@
-<p>
-  quote-form works!
-</p>
+<div class="container-fluid">
+    <div class="row">
+        <form (ngSubmit)='submitQuotes()' #quoteForm='ngForm'>
+            <!-- Quote Form -->
+            <div class="form-group">
+                <label for="quote">New Quote:</label>
+                <textarea type="text" class="form-control" id="quote" rows="2" [(ngModel)]="newQuotes.quote" quote="quote" #quote="ngModel" required></textarea>
+                <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+                    <p>Quote is required</p>
+
+                </div>
+            </div>
+            <!-- Explanation Input -->
+            <div class="form-group">
+                <label for="explanation">Explanation:</label>
+                <textarea type="text" class="form-control" id="explanation" rows="2" [(ngModel)]="newQuotes.explanation" quote="explanation" #explanation="ngModel" required></textarea>
+                <div [hidden]="explanation.valid || explanation.pristine" class="alert alert-danger">
+                    <p> Explanation is required</p>
+
+                </div>
+            </div>
+            <!-- Author Name -->
+            <div class="form-group">
+                <label for="author">Author:</label>
+                <input type="text" class="form-control" id="author" rows="4" [(ngModel)]="newQuotes.author" quote="author" #author="ngModel" required>
+                <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+                    <p> Explanation is required</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Date Input -->
+            <div class="form-group">
+              <label for="complete">Posted On:</label>
+              <input type='date' id="complete" [(ngModel)]="newQuotes.completeDate" name="completeDate" #completeDate="ngModel" required >
+              <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
+                <p> Complete Date is required</p>
+
+              </div>
+            </div>
+
+            <button type="Submit" class="btn btn-success btn-lg">Add Quote</button>
+        </form>
+    </div>
+</div>

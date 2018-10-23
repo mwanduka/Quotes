@@ -1,1 +1,4 @@
-<p>{{qute.explanation}}</p>
+<p>{{quote.explanation}}</p>
+<p><b>Author:</b>{{quote.author}}</p>
+<p>Posted {{quote.completeDate|dateCount}} days ago</p>
+<button class='btn btn-danger' (click) = 'quoteDelete(true)'> Delete</button>
