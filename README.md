@@ -6,10 +6,10 @@ This is an application that enables a user add a quote and vote for them.
 
 ## Technologies Used
 
-HTML
-CSS
-TYPESCRIPT
-ANGULAR CLI
+*HTML
+*CSS
+*TYPESCRIPT
+*ANGULAR CLI
 
 ## Link to Site
 
